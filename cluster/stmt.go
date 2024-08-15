@@ -47,9 +47,11 @@ func RegisterStmt(sql string) int {
 func PrepareStmts(db *sql.DB, project string, skipErrors bool) error {
 	logger.Infof("Preparing statements for Go project %q", project)
 
+	mclCaller := GetCallerProject()
+
 	// Also prepare statements from microcluster if we are in a different project.
-	projects := []string{"microcluster"}
-	if project != "microcluster" {
+	projects := []string{mclCaller}
+	if project != mclCaller {
 		projects = append(projects, project)
 	}
 
