@@ -11,7 +11,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/canonical/go-dqlite/v2/driver"
+	"github.com/canonical/go-dqlite/driver"
 	"github.com/canonical/lxd/lxd/db/schema"
 	"github.com/canonical/lxd/lxd/request"
 	"github.com/canonical/lxd/lxd/response"
